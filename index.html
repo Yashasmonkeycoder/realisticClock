@@ -1,0 +1,304 @@
+<!Doctype HTML>
+<html >
+  <head >
+    <title >Realistic Clock?</title>
+    <style >
+      #hour{
+    position: fixed;
+    top:29%;
+    left:50%;
+    transform-origin: 50% 100%;
+    transform: rotate(30deg);
+    width: 4px;
+    height: 120px;
+    border-top-width: 3px;
+    border: solid black 4px;
+      }
+      #min{
+    position: fixed;
+    top:26.7%;
+    left:50%;
+    transform-origin: 50% 100%;
+    transform: rotate(0deg);
+    width: 4px;
+    height: 160px;
+    border-top-width: 3px;
+    border: solid black 4px;
+      }
+      #sec{
+    position: fixed;
+    top:26.7%;
+    left:50%;
+    transform-origin: 50% 100%;
+    transform: rotate(0deg);
+    width: 0px;
+    height: 160px;
+    border-top-width: 3px;
+    border: solid black 5px;
+      }
+      .circle{
+        width:360px;
+        height: 360px;
+        top:23.4%;
+        left:26.9%;
+        position: fixed;
+        border:solid #cdc779 50px;
+        border-radius: 300px;
+        
+      }
+      h3{
+        font-size: 45px;
+        position: fixed;
+      }
+      #twelve{
+        top: 23%;
+        left: 48%;
+      }
+      #one{
+        top: 25%;
+        left: 60%;
+      }
+      #two{
+        top: 29%;
+        left: 67.1%;
+      }
+      #three{
+        top: 35%;
+        left: 69.8%;
+      }
+       #four{
+        top: 40%;
+        left: 67.1%;
+      }
+      #five{
+        top: 44%;
+        left: 60%;
+      }
+      #six{
+        top: 45.5%;
+        left: 49%;
+      }
+      #seven{
+        top: 44%;
+        left: 38.5%;
+      }
+      #eight{
+        top: 40%;
+        left: 32%;
+      }
+      #nine{
+        top: 35%;
+        left: 29%;
+      }
+      #ten{
+        top: 29%;
+        left: 29%;
+      }
+      #eleven{
+        top: 25%;
+        left: 37%;
+      }
+      #digital{
+        position: fixed;
+        top: 55%;
+        left: 40%;
+      }
+      #digiback{
+        position: fixed;
+        top: 54.5%;
+        left: 35%;
+        width: 300px;
+        height: 60px;
+        background-color: #9eab90;
+        border: dashed #4b663e 6px;
+        border-radius: 30px;
+      }
+      .background{
+        position: fixed;
+        width: 500px;
+        height: 750px;
+        background-color: #a68f55;
+        top: 20%;
+        left:23%;
+        border: ridge #cebb88 20px;
+        border-radius: 40px;
+        box-shadow: 20px 15px 20px 10px #677579;
+      }
+      @keyframes arc{
+        0%{transform:rotate(20deg);}
+        50%{transform: rotate(-20deg);}
+        100%{transform:rotate(20deg);}
+      }
+        @keyframes arct{
+        0%{top: 77%;
+        left:31%;}
+        50%{top: 77%;
+        left:58%;}
+        100%{top: 77%;
+        left:31%;}
+      }
+      .rod{
+        position: fixed;
+        height: 400px;
+        width: 40px;
+        top: 60%;
+        left:48%;
+        background-color: #85898d;
+        transform-origin: 50% 0%;
+        transform: rotate(0deg);
+        box-shadow: 20px 15px 20px 10px #677579;
+        animation-name: arc;
+        animation-delay:1s ; 
+        animation-iteration-count: infinite;
+        animation-duration: 2s;
+      }
+      .ball{
+        position: fixed;
+        height: 100px;
+        width: 100px;
+        top: 82%;
+        left:40%;
+        border:ridge #90a1a5 10px;
+        border-radius: 200px;
+        background-image: linear-gradient(to right,#92a5aa,#434748);
+        box-shadow: 20px 15px 20px 10px #677579;
+        animation-name: arct;
+        animation-delay:1s ; 
+        animation-iteration-count: infinite;
+        animation-duration: 2s;
+      }
+      #alram{
+        position: fixed;
+        top: 95%;
+        left: 40%;
+        border-radius:30px;
+        width: 300px;
+        height: 60px;
+      }
+      .alram{
+        position: fixed;
+        top: 93%;
+        left: 15%;
+        border-radius:30px;
+        width: 300px;
+        height: 60px;
+      }
+      #off{
+        position:absolute;
+        top:10%;
+        left:40%;
+        border:dotted black 4px;
+        border-radius: 20px;
+        color: #ca82e9;
+        display:none;
+      }
+      #copyright{
+        position: fixed;
+        top: 97%;
+        left: 25%;
+        font-size: 20px;
+        width: 500px;
+        height: 60px;
+      }
+    </style>
+  </head>
+  <body >
+    <div id="pendulem">
+      <h3 class="rod"> </h3>
+      <h3 onclick="haha()" class="ball"> </h3>
+    </div>
+    <h3 class="background" ></h3>
+    <h3 class="circle" > </h3>
+    <h3 id="hour" > </h3>
+    <h3 id="min" > </h3>
+    <h3 id="sec" > </h3>
+    <h3 id="one" >1</h3>
+    <h3 id="two" >2</h3>
+    <h3 id="three" >3</h3>
+    <h3 id="four" >4</h3>
+    <h3 id="five" >5</h3>
+    <h3 id="six" >6</h3>
+    <h3 id="seven" >7</h3>
+    <h3 id="eight" >8</h3>
+    <h3 id="nine" >9</h3>
+    <h3 id="ten" >10</h3>
+    <h3 id="eleven" >11</h3>
+    <h3 id="twelve" >12</h3>
+    <h3 id="digiback"> </h3>
+    <h3 id="digital">00:00:00</h3>
+    <input type="time" id="alram" />
+    <h3 class="alram">Set alram:</h3>
+    <h3 id="off" onclick="stop()">Off alram?</h3>
+    <audio controls hidden="true" id="music">
+  <source src="Rick_Astley_-_Never_Gonna_Give_You_Up_Qoret.com.mp3" type="audio/mp3">
+
+Your browser does not support the audio element.
+</audio>
+<h5 id="copyright">©Copyright 2069 | made by Yashas monkey</h5>
+  </body>
+</html>
+<script >
+
+function start(){
+  //All variables
+  var date = new Date;
+  var Ho = date.getHours();
+  var Hourt = Ho;
+  if(Ho >= 12){
+    Hourt = Ho-12;
+  }
+  var Min = date.getMinutes();
+  var Sec = date.getSeconds();
+  
+  //Hours complete
+
+  hourHand = Hourt*30;
+  MinH = Min/15;
+  hourMin = MinH*7.5;
+  HourN = hourHand+hourMin
+
+  //Minutes complete
+  var minHand = Min*6;
+  
+  //Seconds complete
+  var secHand = Sec*6;
+  //asign hour hand
+ document.getElementById("hour").style.transform = "rotate("+HourN+"deg)";
+  
+  //asign minute hand
+ document.getElementById("min").style.transform = "rotate("+minHand+"deg)"
+
+ //asign second hand
+document.getElementById("sec").style.transform = "rotate("+secHand+"deg)"
+
+//digital clock
+var ampm = "?";
+if(Ho >= 12){
+  ampm = "PM"
+}
+else{
+  ampm = "AM"
+}
+document.getElementById("digital").innerHTML=Hourt+":"+Min+":"+Sec+" "+ampm;
+
+//alram
+alramVal = Ho+":"+Min
+alram = document.getElementById("alram").value;
+if(alramVal === alram){
+  document.getElementById("music").play();
+  document.getElementById("off").style.display="block"
+  document.getElementById("alram").value=0;
+}
+}
+//engine to run each 1 second
+setInterval(start,1000)
+
+//other stuff
+function haha(){
+  alert("haha, pendulum go brrrrr..");
+}
+function stop(){
+  document.getElementById("music").pause();
+  document.getElementById("off").style.display="none";
+}
+</script>
